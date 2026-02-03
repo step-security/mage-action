@@ -1,0 +1,87 @@
+name: ci
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    paths-ignore:
+      - '.github/mage-releases.json'
+
+jobs:
+  ci:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ${{ github.actor == 'dependabot[bot]' && fromJSON('["ubuntu-latest"]') || fromJSON('["ubuntu-latest", "macos-13", "windows-latest"]') }}
+        version:
+          - latest
+          - v1.8.0
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v6
+      -
+        name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: "1.20"
+          cache-dependency-path: test/go.sum
+      -
+        name: Mage
+        uses: ./
+        with:
+          version: ${{ matrix.version }}
+          args: build
+          workdir: test
+          cache-binary: false
+
+  install-only:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ${{ github.actor == 'dependabot[bot]' && fromJSON('["ubuntu-latest"]') || fromJSON('["ubuntu-latest", "macos-13", "windows-latest"]') }}
+        version:
+          - latest
+          - v1.8.0
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v6
+      -
+        name: Install Mage
+        uses: ./
+        with:
+          version: ${{ matrix.version }}
+          install-only: true
+          cache-binary: false
+      -
+        name: Show Mage version
+        run: mage --version
+
+  cache-binary:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v6
+      -
+        name: Install Mage
+        uses: ./
+        with:
+          version: v1.14.0
+          install-only: true
+          cache-binary: true
+      -
+        name: Show Mage version
+        run: mage --version
