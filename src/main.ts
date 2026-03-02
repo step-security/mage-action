@@ -2,7 +2,7 @@ import * as path from 'path';
 import * as installer from './installer';
 import * as core from '@actions/core';
 import * as exec from '@actions/exec';
-import * as github from "@actions/github";
+import * as github from '@actions/github';
 import axios, {isAxiosError} from 'axios';
 
 async function validateSubscription() {
@@ -21,12 +21,13 @@ async function validateSubscription() {
   if (repoPrivate === false) return;
 
   const serverUrl = process.env.GITHUB_SERVER_URL || 'https://github.com';
-  const body: Record<string, string> = { action: action || '' };
+  const body: Record<string, string> = {action: action || ''};
   if (serverUrl !== 'https://github.com') body.ghes_server = serverUrl;
   try {
     await axios.post(
       `https://agent.api.stepsecurity.io/v1/github/${process.env.GITHUB_REPOSITORY}/actions/maintained-actions-subscription`,
-      body, { timeout: 3000 }
+      body,
+      {timeout: 3000}
     );
   } catch (error) {
     if (isAxiosError(error) && error.response?.status === 403) {
