@@ -1,3 +1,5 @@
+[![StepSecurity Maintained Action](https://raw.githubusercontent.com/step-security/maintained-actions-assets/main/assets/maintained-action-banner.png)](https://docs.stepsecurity.io/actions/stepsecurity-maintained-actions)
+
 <p align="center">
   <img alt="Mage Logo" src="https://avatars2.githubusercontent.com/u/32144377?s=200&v=4" height="200" />
   <h3 align="center">Mage Action</h3>
