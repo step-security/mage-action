@@ -8,7 +8,6 @@ permissions:
   contents: read
 
 on:
-  schedule:
   push:
     branches:
       - 'main'
@@ -22,7 +21,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ${{ github.actor == 'dependabot[bot]' && fromJSON('["ubuntu-latest"]') || fromJSON('["ubuntu-latest", "macos-13", "windows-latest"]') }}
+        os: ${{ github.actor == 'dependabot[bot]' && fromJSON('["ubuntu-latest"]') || fromJSON('["ubuntu-latest", "windows-latest"]') }}
         version:
           - latest
           - v1.8.0
@@ -55,7 +54,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ${{ github.actor == 'dependabot[bot]' && fromJSON('["ubuntu-latest"]') || fromJSON('["ubuntu-latest", "macos-13", "windows-latest"]') }}
+        os: ${{ github.actor == 'dependabot[bot]' && fromJSON('["ubuntu-latest"]') || fromJSON('["ubuntu-latest", "windows-latest"]') }}
         version:
           - latest
           - v1.8.0
