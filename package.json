@@ -28,11 +28,11 @@
   "license": "MIT",
   "packageManager": "yarn@3.6.3",
   "dependencies": {
-    "@actions/cache": "^4.0.3",
+    "@actions/cache": "^5.0.5",
     "@actions/core": "^1.11.1",
     "@actions/exec": "^1.1.1",
-    "@actions/github": "^6.0.0",
-    "@actions/http-client": "^2.2.3",
+    "@actions/github": "^8.0.1",
+    "@actions/http-client": "^3.0.2",
     "@actions/tool-cache": "^2.0.2",
     "axios": "^1.13.4"
   },
@@ -40,7 +40,7 @@
     "@types/node": "^20.6.0",
     "@typescript-eslint/eslint-plugin": "^6.6.0",
     "@typescript-eslint/parser": "^6.6.0",
-    "@vercel/ncc": "^0.38.0",
+    "@vercel/ncc": "^0.38.4",
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-jest": "^27.2.3",
