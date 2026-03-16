@@ -31,7 +31,7 @@
     "@actions/cache": "^5.0.5",
     "@actions/core": "^1.11.1",
     "@actions/exec": "^1.1.1",
-    "@actions/github": "^8.0.1",
+    "@actions/github": "^9.0.0",
     "@actions/http-client": "^3.0.2",
     "@actions/tool-cache": "^2.0.2",
     "axios": "^1.13.4"

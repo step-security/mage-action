@@ -68,9 +68,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@actions/github@npm:^8.0.1":
-  version: 8.0.1
-  resolution: "@actions/github@npm:8.0.1"
+"@actions/github@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@actions/github@npm:9.0.0"
   dependencies:
     "@actions/http-client": ^3.0.2
     "@octokit/core": ^7.0.6
@@ -79,7 +79,7 @@ __metadata:
     "@octokit/request": ^10.0.7
     "@octokit/request-error": ^7.1.0
     undici: ^6.23.0
-  checksum: 7f374d46ecb86acce26b5a18de6212e5ba4609ec3b0e837cbf698911c466f0c604f5dcdc28734bff543a02553da9637479f223005825df8038d99a0723735b6a
+  checksum: 5d3b2790f7b67cb7b0ec4416e8b666fde69621bac5fff5e59737c8233f8ad09829471b5cab2c50faea60da39554c69d5e7e51e5ffc8e2c899fba32f47db15b9b
   languageName: node
   linkType: hard
 
@@ -4705,7 +4705,7 @@ __metadata:
     "@actions/cache": ^5.0.5
     "@actions/core": ^1.11.1
     "@actions/exec": ^1.1.1
-    "@actions/github": ^8.0.1
+    "@actions/github": ^9.0.0
     "@actions/http-client": ^3.0.2
     "@actions/tool-cache": ^2.0.2
     "@types/node": ^20.6.0
