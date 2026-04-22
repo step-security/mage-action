@@ -1,6 +1,6 @@
-import {describe, expect, it} from '@jest/globals';
+import {describe, expect, it} from 'vitest';
 import * as fs from 'fs';
-import * as installer from '../src/installer';
+import * as installer from '../src/installer.js';
 
 describe('getRelease', () => {
   it('returns latest Mage GitHub release', async () => {

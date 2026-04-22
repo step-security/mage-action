@@ -1,7 +1,7 @@
 import * as path from 'path';
-import * as installer from './installer';
 import * as core from '@actions/core';
 import * as exec from '@actions/exec';
+import * as installer from './installer.js';
 import * as github from '@actions/github';
 import axios, {isAxiosError} from 'axios';
 
