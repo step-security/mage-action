@@ -14,3 +14,13 @@ updates:
     directory: /test
     schedule:
       interval: daily
+
+  - package-ecosystem: npm
+    directory: /dist
+    schedule:
+      interval: daily
+
+  - package-ecosystem: gomod
+    directory: /tests/fixtures/app
+    schedule:
+      interval: daily
